@@ -1,19 +1,28 @@
 # -------------- Exercice78.py --------------
-def middle(s):
-    if len(s) == 0:
-        return ""
-    elif len(s) % 2 != 0:
-        return s[len(s)//2]
-    elif len(s) % 2 == 0:
-        return s[len(s)//2 - 1] + s[len(s)//2]
-
 mot = "Un roc cornu"
 mot_join = mot.replace(" ", "")
-mot_join.lower()
-for x in reversed(len(mot_join/2)) :
-    for y in len(mot_join/2) :
-        if x != y:
-            print(False)
-        print(True)
-    
-print(mot_join)
+mot_join = mot_join.lower()
+taille_divise = len(mot_join)//2 
+palindrome = False
+for x in range(taille_divise):
+    for y in range(len(mot_join)-1, taille_divise, -1):
+        if mot_join[x] == mot_join[y]: 
+            mot_join = mot_join[:-1]
+            break
+        print(False)
+
+print(True)
+
+
+
+
+# --------- Correction 
+ 
+mot = "Un roc cornu"
+ 
+mot_lower = mot.lower().replace(" ", "")
+ 
+if mot_lower == mot_lower[::-1]:
+    print(True)
+else:
+    print(False) 
